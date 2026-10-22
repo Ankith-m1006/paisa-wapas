@@ -1,0 +1,8 @@
+.venv/
+.env
+__pycache__/
+runs/private/
+data/real/
+srv.log
+runs-eval*.log
+.pytest_cache/

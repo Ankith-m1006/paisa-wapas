@@ -1,0 +1,3 @@
+temporalio>=1.34
+fastapi>=0.118
+uvicorn>=0.30

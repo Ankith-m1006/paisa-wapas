@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paisa Wapas</title>
+<meta name="description" content="Forward the failed-payment SMS once. Paisa Wapas knows the RBI deadline, counts the ₹100 a day the bank owes you, and waits for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fffdf8; --paper:#f6f1e7; --ink:#1d1a16; --muted:#6f685d; --line:#e7dfd0;
+  --leaf:#1f6f4a; --leaf-soft:#e3f1e8; --sun:#b86b00; --sun-soft:#fdf0d9; --red:#b3261e; --red-soft:#fbe7e5;
+  --ink-btn:#1d1a16;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#15130f; --paper:#1f1c17; --ink:#f3eee4; --muted:#a79f91; --line:#332e26;
+  --leaf:#5cc495; --leaf-soft:#18302a; --sun:#f0a54a; --sun-soft:#33281a; --red:#ff8a80; --red-soft:#3a1d1b; --ink-btn:#f3eee4;
+}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button,textarea,select{font:inherit;color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:28px 16px 80px}
+h1{font:700 40px/1.05 Fraunces,Georgia,serif;letter-spacing:-.02em;margin:0}
+h1 span{color:var(--leaf)}
+.tag{font-size:18px;color:var(--muted);margin:10px 0 26px;max-width:560px}
+h2{font:600 22px/1.2 Fraunces,Georgia,serif;margin:30px 0 10px}
+.box{border:1px solid var(--line);border-radius:18px;background:var(--bg);padding:18px}
+textarea{width:100%;min-height:118px;border:1.5px solid var(--line);border-radius:14px;padding:14px;background:var(--paper);resize:vertical;font-size:16px}
+textarea:focus{outline:none;border-color:var(--ink)}
+.samples{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px}
+.samples button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer}
+.samples button:hover{background:var(--paper)}
+.btn{border:0;border-radius:12px;padding:13px 20px;font-weight:600;cursor:pointer;background:var(--ink-btn);color:var(--bg)}
+.btn:disabled{opacity:.5;cursor:wait}
+.btn.full{width:100%}
+.err{color:var(--red);font-size:14px;margin-top:10px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:4px}
+.fact{background:var(--paper);border-radius:12px;padding:10px 12px}
+.fact span{display:block;font-size:12px;color:var(--muted)}
+.fact b{font-weight:600;word-break:break-word}
+.fact .ok{color:var(--leaf);font-size:12px;font-weight:600}
+.fact .no{color:var(--sun);font-size:12px;font-weight:600}
+.verdict{margin-top:14px;border-radius:14px;padding:16px;background:var(--leaf-soft)}
+.verdict.late{background:var(--red-soft)}
+.verdict .big{font:600 21px/1.3 Fraunces,Georgia,serif}
+.verdict .rule{font-size:13px;color:var(--muted);margin-top:6px}
+.money{font:700 30px/1 Fraunces,Georgia,serif;color:var(--red)}
+.not{background:var(--paper);border-radius:14px;padding:14px;margin-top:12px;color:var(--muted)}
+.choose{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.choose label{flex:1;min-width:150px;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;font-size:14px}
+.choose input{margin-right:6px;accent-color:var(--leaf)}
+.choose label:has(input:checked){border-color:var(--ink);background:var(--paper)}
+.tl{position:relative;margin:18px 0 0;padding-left:26px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.ev{position:relative;padding:0 0 18px;opacity:0;transform:translateY(6px);animation:in .35s ease forwards}
+.ev::before{content:"";position:absolute;left:-24px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--leaf)}
+.ev.warn::before{border-color:var(--sun)} .ev.bad::before{border-color:var(--red)}
+.ev .day{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ev .what{font-weight:600}
+.ev .detail{font-size:14px;color:var(--muted)}
+@keyframes in{to{opacity:1;transform:none}}
+details.letter{margin-top:8px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+details.letter summary{cursor:pointer;padding:10px 12px;font-size:14px;font-weight:600}
+details.letter pre{white-space:pre-wrap;font:14px/1.55 Inter,sans-serif;margin:0;padding:0 12px 12px}
+.copy{border:0;background:none;color:var(--leaf);font-weight:600;cursor:pointer;padding:0 12px 12px;font-size:13px}
+.end{border-radius:14px;padding:14px 16px;margin-top:6px;background:var(--paper)}
+.end b{font-family:Fraunces,Georgia,serif;font-size:19px}
+.foot{margin-top:40px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.foot a{color:inherit}
+.sloth{font-size:13px;color:var(--muted);margin-top:8px}
+@media (max-width:520px){ h1{font-size:34px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Paisa <span>Wapas</span></h1>
+  <p class="tag">Money cut, payment failed? Forward the SMS once. Paisa Wapas knows the RBI deadline, counts the ₹100 a day the bank owes you, and does the waiting for you.</p>
+
+  <div class="box">
+    <textarea id="sms" placeholder="Paste the bank or UPI SMS here"></textarea>
+    <div class="samples" id="samples"></div>
+    <button class="btn full" id="read">Read it</button>
+    <div class="err" id="err" hidden></div>
+  </div>
+
+  <div id="result"></div>
+  <div id="sim"></div>
+
+  <div class="foot">
+    Rules: RBI circular DPSS.CO.PD No.629/02.01.014/2019-20 (20 Sep 2019, in force 15 Oct 2019) and the RBI Integrated Ombudsman Scheme, 2021.
+    Gemma reads the SMS; every amount, date and reference is checked against the SMS text by code, and every deadline and rupee is worked out by code.
+    The waiting is a <a href="https://temporal.io" rel="noopener">Temporal</a> workflow. Nothing is sent for you: letters are drafts you copy.
+    <span id="cfg"></span> · <a href="https://github.com/Ankith-m1006/paisa-wapas" rel="noopener">source</a>
+  </div>
+</div>
+
+<script>
+const SAMPLES = [
+  ["UPI to a person, pending", "Rs.1250.00 debited from A/c XX4521 on 18-10-26 towards UPI/229145670123/Ramesh Kumar. Txn status: PENDING. If not credited to beneficiary, amount will be reversed. -SBI"],
+  ["ATM, no cash", "Dear Customer, Rs.2,000.00 has been debited from your A/c XXXXXX8812 on 09-Oct-26 for ATM WDL at ATM ID S1BW004512. Cash not dispensed? Call 1800-1234. -Canara Bank"],
+  ["Shop UPI failed", "Dear Customer, your UPI txn of Rs 499.00 to SWIGGY on 12/10/2026 has FAILED. Amount debited will be refunded to your a/c within 5 working days. UPI Ref No 628811902341 - HDFC Bank"],
+  ["A normal payment", "Paid Rs.120.00 to MOHAN TEA STALL on 20-10-26 using UPI. UPI Ref: 629301884410. Not you? Call 18002586161 -Kotak Bank"],
+];
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const rupees = n => "₹" + Number(n).toLocaleString("en-IN", {maximumFractionDigits: 2});
+const fmt = iso => new Date(iso + "T00:00:00").toLocaleDateString("en-IN", {weekday: "short", day: "numeric", month: "short", year: "numeric"});
+let last = null;
+
+$("#samples").innerHTML = SAMPLES.map(([l], i) => `<button type="button" data-i="${i}">${esc(l)}</button>`).join("");
+$("#samples").querySelectorAll("button").forEach(b => b.onclick = () => { $("#sms").value = SAMPLES[b.dataset.i][1]; $("#read").click(); });
+
+async function api(path, body) {
+  const r = await fetch(path, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(typeof j.detail === "string" ? j.detail : "Something went wrong (" + r.status + ").");
+  return j;
+}
+
+const KIND = {atm: "ATM, cash not given", card_to_card: "Card to card transfer", pos: "Card at a shop", card_online: "Card online", imps: "IMPS transfer",
+  upi_transfer: "UPI to a person", upi_merchant: "UPI to a shop or app", aeps: "Aadhaar Pay / AePS", nach: "NACH / ECS", wallet: "Wallet / prepaid",
+  reversal: "Money given back", not_failed: "Not a failed payment"};
+
+$("#read").onclick = async () => {
+  const sms = $("#sms").value.trim();
+  $("#err").hidden = true; $("#sim").innerHTML = "";
+  if (!sms) { $("#sms").focus(); return; }
+  const b = $("#read"); b.disabled = true; b.textContent = "Gemma is reading it…";
+  try {
+    last = await api("/api/read", {sms});
+    renderRead(last);
+  } catch (e) { $("#err").textContent = e.message; $("#err").hidden = false; }
+  finally { b.disabled = false; b.textContent = "Read it"; }
+};
+
+function renderRead(d) {
+  const r = d.reading, v = d.verdict;
+  const fact = (label, val, checked) => `<div class="fact"><span>${label}</span><b>${esc(val || "—")}</b>${val ? (checked ? '<div class="ok">✓ found in the SMS</div>' : "") : ""}</div>`;
+  let html = `<h2>What the SMS says</h2><div class="box"><div class="facts">
+    ${fact("What happened", KIND[r.kind] || r.kind)}
+    ${fact("Amount", r.amount != null ? rupees(r.amount) : "", true)}
+    ${fact("Date", r.txn_date ? fmt(r.txn_date) : "", true)}
+    ${fact("Reference", r.ref, true)}
+    ${fact("Bank / app", r.bank)}
+    ${fact("Paid to", r.payee)}
+  </div>${r.problems.length ? `<div class="sloth">Checks: ${r.problems.map(esc).join("; ")}</div>` : ""}`;
+  if (v) {
+    const late = v.days_late > 0;
+    html += `<div class="verdict ${late ? "late" : ""}">
+      <div class="big">${late ? `The money was due back on ${fmt(v.deadline)}. That's ${v.days_late} day${v.days_late === 1 ? "" : "s"} late.` : `RBI says the money must be back by ${fmt(v.deadline)}.`}</div>
+      ${late ? `<div style="margin-top:8px">The bank already owes you <span class="money">${rupees(v.compensation)}</span> &nbsp;(₹${v.per_day} for every day late), paid without you asking.</div>` : `<div style="margin-top:6px">If it isn't, the bank owes you ₹${v.per_day} for every day late, and has to pay it without you asking.</div>`}
+      <div class="rule">${esc(v.rule.incident)}: reversal by T + ${v.rule.days} day${v.rule.days === 1 ? "" : "s"} (RBI circular, annex row ${esc(v.rule.annex_row)}).</div>
+    </div>`;
+    html += `</div><h2>Now do nothing</h2><div class="box">
+      <div>Paisa Wapas waits for you: it checks on the deadline, drafts the bank letter when it's late, and the RBI complaint 30 days after you send it. See what that looks like:</div>
+      <div class="choose">
+        <label><input type="radio" name="back" value="${v.rule.days}" checked>Money comes back on time</label>
+        <label><input type="radio" name="back" value="12">It comes back on day 12</label>
+        <label><input type="radio" name="back" value="45">It takes 45 days</label>
+        <label><input type="radio" name="back" value="">It never comes back</label>
+      </div>
+      <button class="btn full" id="ff">Fast-forward the next weeks</button>
+      <div class="sloth">This runs the real waiting workflow on Temporal's time-skipping server, as if the SMS arrived today: weeks pass in seconds. Letters are written by Gemma from facts code worked out.</div>
+      <div class="err" id="ferr" hidden></div>
+      <div id="tl"></div></div>`;
+  } else {
+    html += `<div class="not">${r.kind === "reversal" ? "This is the money coming back. If you were waiting on it, you're done." : r.kind === "not_failed" ? "This looks like a normal payment or message, not a failed one. Nothing to chase." : "This SMS doesn't give a date and amount that can be followed."}</div></div>`;
+  }
+  $("#result").innerHTML = html;
+  const ff = $("#ff"); if (ff) ff.onclick = fastForward;
+  $("#result").scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+async function fastForward() {
+  const val = document.querySelector("input[name=back]:checked").value;
+  const b = $("#ff"); b.disabled = true; b.textContent = "Waiting patiently… (weeks pass in seconds)";
+  $("#ferr").hidden = true; $("#tl").innerHTML = "";
+  try {
+    const r = await api("/api/simulate", {reading: {...last.reading, sms: last.sms}, back_after_days: val === "" ? null : Number(val)});
+    renderTimeline(r);
+  } catch (e) { $("#ferr").textContent = e.message; $("#ferr").hidden = false; }
+  finally { b.disabled = false; b.textContent = "Fast-forward again"; }
+}
+
+function renderTimeline(r) {
+  const s = r.status, t0 = new Date(r.case.txn_date + "T00:00:00");
+  const dayN = iso => Math.round((new Date(iso + "T00:00:00") - t0) / 864e5);
+  const cls = w => /Deadline passed|RBI/.test(w) ? "bad" : /letter|sent/i.test(w) ? "warn" : "";
+  const letters = {"Bank letter ready": ["bank", "Letter to your bank"], "RBI complaint ready": ["rbi", "Complaint to the RBI Ombudsman"]};
+  const evs = s.timeline.map((e, i) => {
+    const L = letters[e.what];
+    const letter = L && s.letters[L[0]] ? `<details class="letter"><summary>${L[1]} (draft)</summary><pre>${esc(s.letters[L[0]])}</pre><button class="copy" data-l="${L[0]}">Copy</button></details>` : "";
+    return `<div class="ev ${cls(e.what)}" style="animation-delay:${i * 0.25}s"><div class="day">Day ${dayN(e.on)} · ${esc(fmt(e.on))}</div><div class="what">${esc(e.what)}</div><div class="detail">${esc(e.detail)}</div>${letter}</div>`;
+  }).join("");
+  const owed = s.compensation;
+  const end = r.open
+    ? `<div class="end"><b>Still waiting, still counting.</b><br>${s.days_late} days late so far: the bank owes ${rupees(owed)} and counting. The RBI complaint is ready to file.</div>`
+    : owed > 0
+      ? `<div class="end"><b>Money back, ${s.days_late} days late.</b><br>The bank owes you ${rupees(owed)} in compensation. If it isn't credited, the letters above already say so.</div>`
+      : `<div class="end"><b>Money back on time.</b><br>Nothing owed, nothing to do. You didn't have to check once.</div>`;
+  $("#tl").innerHTML = `<div class="tl">${evs}</div>${end}`;
+  $("#tl").querySelectorAll("[data-l]").forEach(b => b.onclick = async () => { await navigator.clipboard.writeText(s.letters[b.dataset.l]); b.textContent = "Copied"; });
+}
+
+fetch("/api/config").then(r => r.json()).then(c => { $("#cfg").textContent = "Model: " + c.model; }).catch(() => {});
+</script>
+</body>
+</html>
