@@ -30,7 +30,11 @@ The live demo runs the real workflow on Temporal's **time-skipping test server**
 
 40 SMS in the formats of SBI, HDFC, ICICI, Axis, Kotak, PNB, Canara, Bank of Baroda, Paytm and PhonePe, written by hand (no real customer data), including Hinglish ones, a balance printed before the amount, a reversal mentioned inside a success message, and normal payments that must not be chased. The baseline is the regex app I'd otherwise write. Run it with `python scripts/eval.py`.
 
-EVAL_TABLE
+| | Letter-ready (deadline, amount and date right) | Wrong chase / don't-chase call | Amount right | Held-out 31-40: letter-ready | Time per SMS |
+|---|---|---|---|---|---|
+| Regex baseline (written while looking at SMS 1-30) | 20/25 | 3/40 | 23/25 | 4/8 | instant |
+| Gemma 4 26B A4B, thinking on | 24/25 | 1/40 | 25/25 | 7/8 | 23.9 s |
+| **Gemma 4 26B A4B, thinking minimal (default)** | 23/25 | 1/40 | 25/25 | 7/8 | 3.3 s |
 
 ## Run it
 

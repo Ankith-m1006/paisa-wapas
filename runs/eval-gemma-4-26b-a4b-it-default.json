@@ -1,0 +1,1510 @@
+{
+ "baseline": {
+  "score": {
+   "kind_exact": 0.9,
+   "missed_failed": 3,
+   "false_alarm": 0,
+   "deadline_rule_right": 0.84,
+   "amount_exact": 0.92,
+   "date_exact": 1.0,
+   "ref_exact": 0.88,
+   "sec_per_sms": 0.00022708773612976075
+  },
+  "rows": [
+   {
+    "id": 1,
+    "gold": {
+     "id": 1,
+     "sms": "Rs.1250.00 debited from A/c XX4521 on 18-10-26 towards UPI/229145670123/Ramesh Kumar. Txn status: PENDING. If not credited to beneficiary, amount will be reversed. -SBI",
+     "kind": "upi_transfer",
+     "amount": 1250.0,
+     "date": "2026-10-18",
+     "ref": "229145670123"
+    },
+    "pred": {
+     "kind": "upi_transfer",
+     "amount": 1250.0,
+     "date": "2026-10-18",
+     "ref": "229145670123"
+    },
+    "sec": 0.006079196929931641
+   },
+   {
+    "id": 2,
+    "gold": {
+     "id": 2,
+     "sms": "Dear Customer, your UPI txn of Rs 499.00 to SWIGGY on 12/10/2026 has FAILED. Amount debited will be refunded to your a/c within 5 working days. UPI Ref No 628811902341 - HDFC Bank",
+     "kind": "upi_merchant",
+     "amount": 499.0,
+     "date": "2026-10-12",
+     "ref": "628811902341"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 499.0,
+     "date": "2026-10-12",
+     "ref": "628811902341"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 3,
+    "gold": {
+     "id": 3,
+     "sms": "Dear Customer, Rs.2,000.00 has been debited from your A/c XXXXXX8812 on 09-Oct-26 for ATM WDL at ATM ID S1BW004512. Cash not dispensed? Call 1800-1234. -Canara Bank",
+     "kind": "atm",
+     "amount": 2000.0,
+     "date": "2026-10-09",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "atm",
+     "amount": 2000.0,
+     "date": "2026-10-09",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 4,
+    "gold": {
+     "id": 4,
+     "sms": "Your a/c no. XXXXXXXX3390 is debited for Rs.750.00 on 21-10-2026 and a/c XXXX1123 credited (IMPS Ref no 629410055871). -PNB",
+     "kind": "not_failed",
+     "amount": 750.0,
+     "date": "2026-10-21",
+     "ref": "629410055871"
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 750.0,
+     "date": "2026-10-21",
+     "ref": "629410055871"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 5,
+    "gold": {
+     "id": 5,
+     "sms": "Paid Rs.120.00 to MOHAN TEA STALL on 20-10-26 using UPI. UPI Ref: 629301884410. Not you? Call 18002586161 -Kotak Bank",
+     "kind": "not_failed",
+     "amount": 120.0,
+     "date": "2026-10-20",
+     "ref": "629301884410"
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 120.0,
+     "date": "2026-10-20",
+     "ref": "629301884410"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 6,
+    "gold": {
+     "id": 6,
+     "sms": "Rs 3500.00 credited to your A/c XX4521 on 19-10-26 as reversal of failed UPI txn Ref 229145670123. -SBI",
+     "kind": "reversal",
+     "amount": 3500.0,
+     "date": "2026-10-19",
+     "ref": "229145670123"
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 3500.0,
+     "date": "2026-10-19",
+     "ref": "229145670123"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 7,
+    "gold": {
+     "id": 7,
+     "sms": "ICICI Bank Acct XX017 debited for Rs 1,899.00 on 15-Oct-26; AMAZON PAY credited. UPI:628915573320. Transaction status pending. Call 18002662 for dispute.",
+     "kind": "upi_merchant",
+     "amount": 1899.0,
+     "date": "2026-10-15",
+     "ref": "628915573320"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 1899.0,
+     "date": "2026-10-15",
+     "ref": "628915573320"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 8,
+    "gold": {
+     "id": 8,
+     "sms": "Your OTP for transaction of Rs.5,000.00 at FLIPKART is 448291. Valid for 3 mins. Do not share it with anyone. -Axis Bank",
+     "kind": "not_failed",
+     "amount": 5000.0,
+     "date": "",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 5000.0,
+     "date": "",
+     "ref": ""
+    },
+    "sec": 0.0010213851928710938
+   },
+   {
+    "id": 9,
+    "gold": {
+     "id": 9,
+     "sms": "Transaction of INR 2,340.00 on your HDFC Bank Credit Card ending 4417 at BIGBAZAAR MYSORE on 2026-10-11 has been declined, amount blocked will be released. Ref 6284XXXX",
+     "kind": "pos",
+     "amount": 2340.0,
+     "date": "2026-10-11",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "pos",
+     "amount": 2340.0,
+     "date": "2026-10-11",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 10,
+    "gold": {
+     "id": 10,
+     "sms": "Sent Rs.5000.00 From HDFC Bank A/C *7781 To SURESH B On 17/10/26 Ref 628977120034 Not You? Call 18002586161/SMS BLOCK UPI to 7308080808",
+     "kind": "not_failed",
+     "amount": 5000.0,
+     "date": "2026-10-17",
+     "ref": "628977120034"
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 5000.0,
+     "date": "2026-10-17",
+     "ref": "628977120034"
+    },
+    "sec": 0.0009844303131103516
+   },
+   {
+    "id": 11,
+    "gold": {
+     "id": 11,
+     "sms": "Dear SBI User, your A/c X8899-debited by Rs.10000.00 on 16Oct26 transfer to LAKSHMI DEVI Ref No 628966201145. Status: Deemed. If credit not received by beneficiary, amount will be auto reversed. -SBI",
+     "kind": "upi_transfer",
+     "amount": 10000.0,
+     "date": "2026-10-16",
+     "ref": "628966201145"
+    },
+    "pred": {
+     "kind": "upi_transfer",
+     "amount": 10000.0,
+     "date": "2026-10-16",
+     "ref": "628966201145"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 12,
+    "gold": {
+     "id": 12,
+     "sms": "Rs.299 debited from a/c **0042 on 14-10-26 for UPI to JIOMOBILITY (Ref 628744501190) - payment failed at merchant. Refund will be processed. -Bank of Baroda",
+     "kind": "upi_merchant",
+     "amount": 299.0,
+     "date": "2026-10-14",
+     "ref": "628744501190"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 299.0,
+     "date": "2026-10-14",
+     "ref": "628744501190"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 13,
+    "gold": {
+     "id": 13,
+     "sms": "Dear Customer, INR 15,000.00 has been debited from your account XX2210 on 13-10-2026 via IMPS to KARTHIK R (IMPS Ref 628655781120). Beneficiary credit pending. -Indian Bank",
+     "kind": "imps",
+     "amount": 15000.0,
+     "date": "2026-10-13",
+     "ref": "628655781120"
+    },
+    "pred": {
+     "kind": "imps",
+     "amount": 15000.0,
+     "date": "2026-10-13",
+     "ref": "628655781120"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 14,
+    "gold": {
+     "id": 14,
+     "sms": "Your salary of Rs.42,500.00 has been credited to A/c XX4521 on 01-10-26. Avl Bal Rs.48,210.50 -SBI",
+     "kind": "not_failed",
+     "amount": 42500.0,
+     "date": "2026-10-01",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 42500.0,
+     "date": "2026-10-01",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 15,
+    "gold": {
+     "id": 15,
+     "sms": "Refund of Rs.499.00 for failed UPI txn Ref 628811902341 has been credited to your HDFC Bank A/c XX7781 on 17-10-26.",
+     "kind": "reversal",
+     "amount": 499.0,
+     "date": "2026-10-17",
+     "ref": "628811902341"
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 499.0,
+     "date": "2026-10-17",
+     "ref": "628811902341"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 16,
+    "gold": {
+     "id": 16,
+     "sms": "Your Paytm Wallet was debited Rs 150 on 19 Oct 2026 for payment to Raju Kirana Store. Payment failed. Amount will be refunded to your wallet. Order ID 20261019114455",
+     "kind": "wallet",
+     "amount": 150.0,
+     "date": "2026-10-19",
+     "ref": "20261019114455"
+    },
+    "pred": {
+     "kind": "wallet",
+     "amount": 150.0,
+     "date": "2026-10-19",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 17,
+    "gold": {
+     "id": 17,
+     "sms": "Rs.640.00 spent on your SBI Credit Card ending 2201 at ZOMATO on 18/10/26. Avl Lmt Rs 31,250. Not you? SMS BLOCK 2201 to 5676791",
+     "kind": "not_failed",
+     "amount": 640.0,
+     "date": "2026-10-18",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 640.0,
+     "date": "2026-10-18",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 18,
+    "gold": {
+     "id": 18,
+     "sms": "Dear customer, cash withdrawal of Rs 5000.00 from ATM PN1234 on 10/10/2026 is debited to a/c XX5531 but cash was not dispensed. Your complaint no. is 7782211. -Union Bank",
+     "kind": "atm",
+     "amount": 5000.0,
+     "date": "2026-10-10",
+     "ref": "7782211"
+    },
+    "pred": {
+     "kind": "atm",
+     "amount": 5000.0,
+     "date": "2026-10-10",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 19,
+    "gold": {
+     "id": 19,
+     "sms": "UPI Txn of Rs.89.00 to swiggy.stores@icici on 20-10-26 failed. Money will be credited back to your Kotak a/c in 2-3 days. UPI Ref 629322004561.",
+     "kind": "upi_merchant",
+     "amount": 89.0,
+     "date": "2026-10-20",
+     "ref": "629322004561"
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 89.0,
+     "date": "2026-10-20",
+     "ref": "629322004561"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 20,
+    "gold": {
+     "id": 20,
+     "sms": "Rs.1000.00 debited from your a/c XX9910 on 18-10-26 by NACH/ECS ACH DR HDFCLIFEINS. Avl bal Rs 2,341.20 -Canara Bank",
+     "kind": "not_failed",
+     "amount": 1000.0,
+     "date": "2026-10-18",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 1000.0,
+     "date": "2026-10-18",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 21,
+    "gold": {
+     "id": 21,
+     "sms": "Your A/C XX4521 debited INR 2,500.00 on 11-10-26 UPI/P2A/628700145523/AMMA MEDICALS/Payment pending. Do not retry. -SBI",
+     "kind": "upi_merchant",
+     "amount": 2500.0,
+     "date": "2026-10-11",
+     "ref": "628700145523"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 2500.0,
+     "date": "2026-10-11",
+     "ref": "628700145523"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 22,
+    "gold": {
+     "id": 22,
+     "sms": "Reversal: Rs 2,000.00 credited to a/c XXXXXX8812 on 13-Oct-26 against ATM WDL dated 09-Oct-26. -Canara Bank",
+     "kind": "reversal",
+     "amount": 2000.0,
+     "date": "2026-10-13",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 2000.0,
+     "date": "2026-10-13",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 23,
+    "gold": {
+     "id": 23,
+     "sms": "Get a Personal Loan up to Rs 5,00,000 at 10.5% in 10 minutes! Apply now: axisb.in/pl T&C -Axis Bank",
+     "kind": "not_failed",
+     "amount": null,
+     "date": "",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 500000.0,
+     "date": "",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 24,
+    "gold": {
+     "id": 24,
+     "sms": "Dear Customer, your online payment of Rs.3,199.00 using Debit Card XX6612 at MYNTRA on 16-10-2026 could not be completed. Amount debited, if any, will be reversed. Ref 628961117742 -ICICI Bank",
+     "kind": "card_online",
+     "amount": 3199.0,
+     "date": "2026-10-16",
+     "ref": "628961117742"
+    },
+    "pred": {
+     "kind": "card_online",
+     "amount": 3199.0,
+     "date": "2026-10-16",
+     "ref": "628961117742"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 25,
+    "gold": {
+     "id": 25,
+     "sms": "Rs 200.00 sent to Anil via PhonePe UPI on 21 Oct 2026. Transaction ID T2610211845221. Status: Failed. Debited money will be refunded by your bank within 1 working day.",
+     "kind": "upi_transfer",
+     "amount": 200.0,
+     "date": "2026-10-21",
+     "ref": "T2610211845221"
+    },
+    "pred": {
+     "kind": "upi_transfer",
+     "amount": 200.0,
+     "date": "2026-10-21",
+     "ref": "T2610211845221"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 26,
+    "gold": {
+     "id": 26,
+     "sms": "Your electricity bill of Rs.1,342.00 for BESCOM consumer 4411228 is due on 25-10-2026. Pay via UPI to avoid late fee.",
+     "kind": "not_failed",
+     "amount": 1342.0,
+     "date": "",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 1342.0,
+     "date": "2026-10-25",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 27,
+    "gold": {
+     "id": 27,
+     "sms": "A/c XX3390 debited Rs.8,000.00 on 19-10-2026 IMPS/629220667788/to PRIYA S. Txn timed out, beneficiary not credited. Will be auto reversed. -PNB",
+     "kind": "imps",
+     "amount": 8000.0,
+     "date": "2026-10-19",
+     "ref": "629220667788"
+    },
+    "pred": {
+     "kind": "imps",
+     "amount": 8000.0,
+     "date": "2026-10-19",
+     "ref": "629220667788"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 28,
+    "gold": {
+     "id": 28,
+     "sms": "Your Card XX4417 was used for Rs 1,050.00 at RELIANCE SMART on 12/10/26 but the transaction failed. Your a/c has been debited. Charge slip not generated. Ref No 628544019012. -HDFC Bank",
+     "kind": "pos",
+     "amount": 1050.0,
+     "date": "2026-10-12",
+     "ref": "628544019012"
+    },
+    "pred": {
+     "kind": "pos",
+     "amount": 1050.0,
+     "date": "2026-10-12",
+     "ref": "628544019012"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 29,
+    "gold": {
+     "id": 29,
+     "sms": "Rs.450 credited to your a/c XX0042 on 19-10-26 by UPI from RAVI KUMAR Ref 629211904432 -Bank of Baroda",
+     "kind": "not_failed",
+     "amount": 450.0,
+     "date": "2026-10-19",
+     "ref": "629211904432"
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 450.0,
+     "date": "2026-10-19",
+     "ref": "629211904432"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 30,
+    "gold": {
+     "id": 30,
+     "sms": "Dear Customer, AePS cash withdrawal of Rs 3000 at CSP KIRAN STORES on 15-10-2026 failed but A/c XX1190 is debited. RRN 628813004417. -Bank of India",
+     "kind": "aeps",
+     "amount": 3000.0,
+     "date": "2026-10-15",
+     "ref": "628813004417"
+    },
+    "pred": {
+     "kind": "aeps",
+     "amount": 3000.0,
+     "date": "2026-10-15",
+     "ref": "628813004417"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 31,
+    "gold": {
+     "id": 31,
+     "sms": "A/c XX4521 bal Rs 3,412.50. Rs 899.00 debited on 21-10-26 for UPI to JIO PREPAID (Ref 629411208833). Recharge failed at merchant, amount will be auto-refunded. -SBI",
+     "kind": "upi_merchant",
+     "amount": 899.0,
+     "date": "2026-10-21",
+     "ref": "629411208833"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 3412.5,
+     "date": "2026-10-21",
+     "ref": "629411208833"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 32,
+    "gold": {
+     "id": 32,
+     "sms": "Bhai ka UPI fail ho gaya: Rs.3000 kat gaye A/c XX7781 se 20/10/26 ko, Ref 629300441187, paisa Suresh ko nahi pahuncha. HDFC Bank",
+     "kind": "upi_transfer",
+     "amount": 3000.0,
+     "date": "2026-10-20",
+     "ref": "629300441187"
+    },
+    "pred": {
+     "kind": "upi_transfer",
+     "amount": 3000.0,
+     "date": "2026-10-20",
+     "ref": "629300441187"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 33,
+    "gold": {
+     "id": 33,
+     "sms": "Your UPI payment of Rs 640.00 to ZOMATO on 19-10-26 is successful. Earlier failed txn of Rs 640.00 (Ref 629210004455) will be reversed within 48 hrs. -ICICI",
+     "kind": "upi_merchant",
+     "amount": 640.0,
+     "date": "2026-10-19",
+     "ref": "629210004455"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 640.0,
+     "date": "2026-10-19",
+     "ref": "629210004455"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 34,
+    "gold": {
+     "id": 34,
+     "sms": "PhonePe: Payment of \u20b91,499 to Airtel Postpaid on 18 Oct 2026 failed. \u20b91,499 debited from your bank account will be refunded in 3-5 days. Txn ID T2610181215440",
+     "kind": "upi_merchant",
+     "amount": 1499.0,
+     "date": "2026-10-18",
+     "ref": "T2610181215440"
+    },
+    "pred": {
+     "kind": "upi_transfer",
+     "amount": null,
+     "date": "2026-10-18",
+     "ref": "T2610181215440"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 35,
+    "gold": {
+     "id": 35,
+     "sms": "Dear Customer, your A/c XX1190 is credited with Rs 3,000.00 on 18-10-2026 towards reversal of failed AePS txn RRN 628813004417. -Bank of India",
+     "kind": "reversal",
+     "amount": 3000.0,
+     "date": "2026-10-18",
+     "ref": "628813004417"
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 3000.0,
+     "date": "2026-10-18",
+     "ref": "628813004417"
+    },
+    "sec": 0.0009984970092773438
+   },
+   {
+    "id": 36,
+    "gold": {
+     "id": 36,
+     "sms": "ATM se paise nahi nikle par Rs 10,000 debit ho gaye: A/c XX5531, 17/10/2026, ATM ID MH4471. Shikayat ke liye 1800-22-2244. -Bank of Maharashtra",
+     "kind": "atm",
+     "amount": 10000.0,
+     "date": "2026-10-17",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 10000.0,
+     "date": "2026-10-17",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 37,
+    "gold": {
+     "id": 37,
+     "sms": "IMPS of INR 25,000.00 from A/c XX2210 to A/c XX8890 (MANOJ K) on 21-10-2026 is under process. Ref 629411776612. If not credited, it will be reversed. Avl Bal INR 4,120.33 -Indian Bank",
+     "kind": "imps",
+     "amount": 25000.0,
+     "date": "2026-10-21",
+     "ref": "629411776612"
+    },
+    "pred": {
+     "kind": "imps",
+     "amount": 25000.0,
+     "date": "2026-10-21",
+     "ref": "629411776612"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 38,
+    "gold": {
+     "id": 38,
+     "sms": "Your Rs 2,200.00 refund for order 408-1234567 has been initiated and will reach your card in 5-7 days. -Amazon",
+     "kind": "not_failed",
+     "amount": 2200.0,
+     "date": "",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 2200.0,
+     "date": "",
+     "ref": ""
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 39,
+    "gold": {
+     "id": 39,
+     "sms": "Txn of Rs.4,560.00 on Debit Card XX6612 at DMART THANE on 20-10-26 failed. Amount debited will be reversed. RRN 629308812201 -Axis Bank",
+     "kind": "pos",
+     "amount": 4560.0,
+     "date": "2026-10-20",
+     "ref": "629308812201"
+    },
+    "pred": {
+     "kind": "pos",
+     "amount": 4560.0,
+     "date": "2026-10-20",
+     "ref": "629308812201"
+    },
+    "sec": 0.0
+   },
+   {
+    "id": 40,
+    "gold": {
+     "id": 40,
+     "sms": "Rs 75 debited from Paytm Wallet on 21 Oct 2026 for payment to Sharma Dairy. Payment failed, \u20b975 will be credited back to your wallet. Order ID 20261021073311",
+     "kind": "wallet",
+     "amount": 75.0,
+     "date": "2026-10-21",
+     "ref": "20261021073311"
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 75.0,
+     "date": "2026-10-21",
+     "ref": ""
+    },
+    "sec": 0.0
+   }
+  ]
+ },
+ "gemma-4-26b-a4b-it (thinking: default)": {
+  "score": {
+   "kind_exact": 0.925,
+   "missed_failed": 1,
+   "false_alarm": 0,
+   "deadline_rule_right": 0.92,
+   "amount_exact": 1.0,
+   "date_exact": 0.96,
+   "ref_exact": 0.88,
+   "sec_per_sms": 23.878705590963364
+  },
+  "rows": [
+   {
+    "id": 1,
+    "gold": {
+     "id": 1,
+     "sms": "Rs.1250.00 debited from A/c XX4521 on 18-10-26 towards UPI/229145670123/Ramesh Kumar. Txn status: PENDING. If not credited to beneficiary, amount will be reversed. -SBI",
+     "kind": "upi_transfer",
+     "amount": 1250.0,
+     "date": "2026-10-18",
+     "ref": "229145670123"
+    },
+    "pred": {
+     "kind": "upi_transfer",
+     "amount": 1250.0,
+     "date": "2026-10-18",
+     "ref": "229145670123",
+     "problems": []
+    },
+    "sec": 13.461296558380127
+   },
+   {
+    "id": 2,
+    "gold": {
+     "id": 2,
+     "sms": "Dear Customer, your UPI txn of Rs 499.00 to SWIGGY on 12/10/2026 has FAILED. Amount debited will be refunded to your a/c within 5 working days. UPI Ref No 628811902341 - HDFC Bank",
+     "kind": "upi_merchant",
+     "amount": 499.0,
+     "date": "2026-10-12",
+     "ref": "628811902341"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 499.0,
+     "date": "2026-10-12",
+     "ref": "628811902341",
+     "problems": []
+    },
+    "sec": 17.853923320770264
+   },
+   {
+    "id": 3,
+    "gold": {
+     "id": 3,
+     "sms": "Dear Customer, Rs.2,000.00 has been debited from your A/c XXXXXX8812 on 09-Oct-26 for ATM WDL at ATM ID S1BW004512. Cash not dispensed? Call 1800-1234. -Canara Bank",
+     "kind": "atm",
+     "amount": 2000.0,
+     "date": "2026-10-09",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "atm",
+     "amount": 2000.0,
+     "date": "2026-10-09",
+     "ref": "S1BW004512",
+     "problems": []
+    },
+    "sec": 26.596476316452026
+   },
+   {
+    "id": 4,
+    "gold": {
+     "id": 4,
+     "sms": "Your a/c no. XXXXXXXX3390 is debited for Rs.750.00 on 21-10-2026 and a/c XXXX1123 credited (IMPS Ref no 629410055871). -PNB",
+     "kind": "not_failed",
+     "amount": 750.0,
+     "date": "2026-10-21",
+     "ref": "629410055871"
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 750.0,
+     "date": "2026-10-21",
+     "ref": "629410055871",
+     "problems": []
+    },
+    "sec": 17.691189765930176
+   },
+   {
+    "id": 5,
+    "gold": {
+     "id": 5,
+     "sms": "Paid Rs.120.00 to MOHAN TEA STALL on 20-10-26 using UPI. UPI Ref: 629301884410. Not you? Call 18002586161 -Kotak Bank",
+     "kind": "not_failed",
+     "amount": 120.0,
+     "date": "2026-10-20",
+     "ref": "629301884410"
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 120.0,
+     "date": "2026-10-20",
+     "ref": "629301884410",
+     "problems": []
+    },
+    "sec": 13.528748989105225
+   },
+   {
+    "id": 6,
+    "gold": {
+     "id": 6,
+     "sms": "Rs 3500.00 credited to your A/c XX4521 on 19-10-26 as reversal of failed UPI txn Ref 229145670123. -SBI",
+     "kind": "reversal",
+     "amount": 3500.0,
+     "date": "2026-10-19",
+     "ref": "229145670123"
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 3500.0,
+     "date": "2026-10-19",
+     "ref": "229145670123",
+     "problems": []
+    },
+    "sec": 12.594166278839111
+   },
+   {
+    "id": 7,
+    "gold": {
+     "id": 7,
+     "sms": "ICICI Bank Acct XX017 debited for Rs 1,899.00 on 15-Oct-26; AMAZON PAY credited. UPI:628915573320. Transaction status pending. Call 18002662 for dispute.",
+     "kind": "upi_merchant",
+     "amount": 1899.0,
+     "date": "2026-10-15",
+     "ref": "628915573320"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 1899.0,
+     "date": "2026-10-15",
+     "ref": "628915573320",
+     "problems": []
+    },
+    "sec": 28.29672861099243
+   },
+   {
+    "id": 8,
+    "gold": {
+     "id": 8,
+     "sms": "Your OTP for transaction of Rs.5,000.00 at FLIPKART is 448291. Valid for 3 mins. Do not share it with anyone. -Axis Bank",
+     "kind": "not_failed",
+     "amount": 5000.0,
+     "date": "",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 5000.0,
+     "date": "",
+     "ref": "",
+     "problems": []
+    },
+    "sec": 21.103465795516968
+   },
+   {
+    "id": 9,
+    "gold": {
+     "id": 9,
+     "sms": "Transaction of INR 2,340.00 on your HDFC Bank Credit Card ending 4417 at BIGBAZAAR MYSORE on 2026-10-11 has been declined, amount blocked will be released. Ref 6284XXXX",
+     "kind": "pos",
+     "amount": 2340.0,
+     "date": "2026-10-11",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "pos",
+     "amount": 2340.0,
+     "date": "2026-10-11",
+     "ref": "6284XXXX",
+     "problems": []
+    },
+    "sec": 33.30525040626526
+   },
+   {
+    "id": 10,
+    "gold": {
+     "id": 10,
+     "sms": "Sent Rs.5000.00 From HDFC Bank A/C *7781 To SURESH B On 17/10/26 Ref 628977120034 Not You? Call 18002586161/SMS BLOCK UPI to 7308080808",
+     "kind": "not_failed",
+     "amount": 5000.0,
+     "date": "2026-10-17",
+     "ref": "628977120034"
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 5000.0,
+     "date": "2026-10-17",
+     "ref": "628977120034",
+     "problems": []
+    },
+    "sec": 26.63909077644348
+   },
+   {
+    "id": 11,
+    "gold": {
+     "id": 11,
+     "sms": "Dear SBI User, your A/c X8899-debited by Rs.10000.00 on 16Oct26 transfer to LAKSHMI DEVI Ref No 628966201145. Status: Deemed. If credit not received by beneficiary, amount will be auto reversed. -SBI",
+     "kind": "upi_transfer",
+     "amount": 10000.0,
+     "date": "2026-10-16",
+     "ref": "628966201145"
+    },
+    "pred": {
+     "kind": "imps",
+     "amount": 10000.0,
+     "date": "2026-10-16",
+     "ref": "628966201145",
+     "problems": []
+    },
+    "sec": 37.10532474517822
+   },
+   {
+    "id": 12,
+    "gold": {
+     "id": 12,
+     "sms": "Rs.299 debited from a/c **0042 on 14-10-26 for UPI to JIOMOBILITY (Ref 628744501190) - payment failed at merchant. Refund will be processed. -Bank of Baroda",
+     "kind": "upi_merchant",
+     "amount": 299.0,
+     "date": "2026-10-14",
+     "ref": "628744501190"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 299.0,
+     "date": "2026-10-14",
+     "ref": "628744501190",
+     "problems": []
+    },
+    "sec": 12.824548482894897
+   },
+   {
+    "id": 13,
+    "gold": {
+     "id": 13,
+     "sms": "Dear Customer, INR 15,000.00 has been debited from your account XX2210 on 13-10-2026 via IMPS to KARTHIK R (IMPS Ref 628655781120). Beneficiary credit pending. -Indian Bank",
+     "kind": "imps",
+     "amount": 15000.0,
+     "date": "2026-10-13",
+     "ref": "628655781120"
+    },
+    "pred": {
+     "kind": "imps",
+     "amount": 15000.0,
+     "date": "2026-10-13",
+     "ref": "628655781120",
+     "problems": []
+    },
+    "sec": 27.556626319885254
+   },
+   {
+    "id": 14,
+    "gold": {
+     "id": 14,
+     "sms": "Your salary of Rs.42,500.00 has been credited to A/c XX4521 on 01-10-26. Avl Bal Rs.48,210.50 -SBI",
+     "kind": "not_failed",
+     "amount": 42500.0,
+     "date": "2026-10-01",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 42500.0,
+     "date": "2026-10-01",
+     "ref": "",
+     "problems": []
+    },
+    "sec": 21.638738870620728
+   },
+   {
+    "id": 15,
+    "gold": {
+     "id": 15,
+     "sms": "Refund of Rs.499.00 for failed UPI txn Ref 628811902341 has been credited to your HDFC Bank A/c XX7781 on 17-10-26.",
+     "kind": "reversal",
+     "amount": 499.0,
+     "date": "2026-10-17",
+     "ref": "628811902341"
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 499.0,
+     "date": "2026-10-17",
+     "ref": "628811902341",
+     "problems": []
+    },
+    "sec": 14.343602895736694
+   },
+   {
+    "id": 16,
+    "gold": {
+     "id": 16,
+     "sms": "Your Paytm Wallet was debited Rs 150 on 19 Oct 2026 for payment to Raju Kirana Store. Payment failed. Amount will be refunded to your wallet. Order ID 20261019114455",
+     "kind": "wallet",
+     "amount": 150.0,
+     "date": "2026-10-19",
+     "ref": "20261019114455"
+    },
+    "pred": {
+     "kind": "wallet",
+     "amount": 150.0,
+     "date": "2026-10-19",
+     "ref": "20261019114455",
+     "problems": []
+    },
+    "sec": 13.133187770843506
+   },
+   {
+    "id": 17,
+    "gold": {
+     "id": 17,
+     "sms": "Rs.640.00 spent on your SBI Credit Card ending 2201 at ZOMATO on 18/10/26. Avl Lmt Rs 31,250. Not you? SMS BLOCK 2201 to 5676791",
+     "kind": "not_failed",
+     "amount": 640.0,
+     "date": "2026-10-18",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 640.0,
+     "date": "2026-10-18",
+     "ref": "",
+     "problems": []
+    },
+    "sec": 13.98703408241272
+   },
+   {
+    "id": 18,
+    "gold": {
+     "id": 18,
+     "sms": "Dear customer, cash withdrawal of Rs 5000.00 from ATM PN1234 on 10/10/2026 is debited to a/c XX5531 but cash was not dispensed. Your complaint no. is 7782211. -Union Bank",
+     "kind": "atm",
+     "amount": 5000.0,
+     "date": "2026-10-10",
+     "ref": "7782211"
+    },
+    "pred": {
+     "kind": "atm",
+     "amount": 5000.0,
+     "date": "2026-10-10",
+     "ref": "7782211",
+     "problems": []
+    },
+    "sec": 15.239342212677002
+   },
+   {
+    "id": 19,
+    "gold": {
+     "id": 19,
+     "sms": "UPI Txn of Rs.89.00 to swiggy.stores@icici on 20-10-26 failed. Money will be credited back to your Kotak a/c in 2-3 days. UPI Ref 629322004561.",
+     "kind": "upi_merchant",
+     "amount": 89.0,
+     "date": "2026-10-20",
+     "ref": "629322004561"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 89.0,
+     "date": "2026-10-20",
+     "ref": "629322004561",
+     "problems": []
+    },
+    "sec": 13.74251413345337
+   },
+   {
+    "id": 20,
+    "gold": {
+     "id": 20,
+     "sms": "Rs.1000.00 debited from your a/c XX9910 on 18-10-26 by NACH/ECS ACH DR HDFCLIFEINS. Avl bal Rs 2,341.20 -Canara Bank",
+     "kind": "not_failed",
+     "amount": 1000.0,
+     "date": "2026-10-18",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 1000.0,
+     "date": "2026-10-18",
+     "ref": "",
+     "problems": []
+    },
+    "sec": 25.633317232131958
+   },
+   {
+    "id": 21,
+    "gold": {
+     "id": 21,
+     "sms": "Your A/C XX4521 debited INR 2,500.00 on 11-10-26 UPI/P2A/628700145523/AMMA MEDICALS/Payment pending. Do not retry. -SBI",
+     "kind": "upi_merchant",
+     "amount": 2500.0,
+     "date": "2026-10-11",
+     "ref": "628700145523"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 2500.0,
+     "date": "2026-10-11",
+     "ref": "628700145523",
+     "problems": []
+    },
+    "sec": 25.69924545288086
+   },
+   {
+    "id": 22,
+    "gold": {
+     "id": 22,
+     "sms": "Reversal: Rs 2,000.00 credited to a/c XXXXXX8812 on 13-Oct-26 against ATM WDL dated 09-Oct-26. -Canara Bank",
+     "kind": "reversal",
+     "amount": 2000.0,
+     "date": "2026-10-13",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 2000.0,
+     "date": "2026-10-13",
+     "ref": "",
+     "problems": []
+    },
+    "sec": 25.470888137817383
+   },
+   {
+    "id": 23,
+    "gold": {
+     "id": 23,
+     "sms": "Get a Personal Loan up to Rs 5,00,000 at 10.5% in 10 minutes! Apply now: axisb.in/pl T&C -Axis Bank",
+     "kind": "not_failed",
+     "amount": null,
+     "date": "",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": null,
+     "date": "",
+     "ref": "",
+     "problems": []
+    },
+    "sec": 18.356927633285522
+   },
+   {
+    "id": 24,
+    "gold": {
+     "id": 24,
+     "sms": "Dear Customer, your online payment of Rs.3,199.00 using Debit Card XX6612 at MYNTRA on 16-10-2026 could not be completed. Amount debited, if any, will be reversed. Ref 628961117742 -ICICI Bank",
+     "kind": "card_online",
+     "amount": 3199.0,
+     "date": "2026-10-16",
+     "ref": "628961117742"
+    },
+    "pred": {
+     "kind": "card_online",
+     "amount": 3199.0,
+     "date": "2026-10-16",
+     "ref": "628961117742",
+     "problems": []
+    },
+    "sec": 18.663009881973267
+   },
+   {
+    "id": 25,
+    "gold": {
+     "id": 25,
+     "sms": "Rs 200.00 sent to Anil via PhonePe UPI on 21 Oct 2026. Transaction ID T2610211845221. Status: Failed. Debited money will be refunded by your bank within 1 working day.",
+     "kind": "upi_transfer",
+     "amount": 200.0,
+     "date": "2026-10-21",
+     "ref": "T2610211845221"
+    },
+    "pred": {
+     "kind": "upi_transfer",
+     "amount": 200.0,
+     "date": "2026-10-21",
+     "ref": "T2610211845221",
+     "problems": []
+    },
+    "sec": 12.801085948944092
+   },
+   {
+    "id": 26,
+    "gold": {
+     "id": 26,
+     "sms": "Your electricity bill of Rs.1,342.00 for BESCOM consumer 4411228 is due on 25-10-2026. Pay via UPI to avoid late fee.",
+     "kind": "not_failed",
+     "amount": 1342.0,
+     "date": "",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 1342.0,
+     "date": "",
+     "ref": "",
+     "problems": []
+    },
+    "sec": 29.10564088821411
+   },
+   {
+    "id": 27,
+    "gold": {
+     "id": 27,
+     "sms": "A/c XX3390 debited Rs.8,000.00 on 19-10-2026 IMPS/629220667788/to PRIYA S. Txn timed out, beneficiary not credited. Will be auto reversed. -PNB",
+     "kind": "imps",
+     "amount": 8000.0,
+     "date": "2026-10-19",
+     "ref": "629220667788"
+    },
+    "pred": {
+     "kind": "imps",
+     "amount": 8000.0,
+     "date": "2026-10-19",
+     "ref": "629220667788",
+     "problems": []
+    },
+    "sec": 26.47205090522766
+   },
+   {
+    "id": 28,
+    "gold": {
+     "id": 28,
+     "sms": "Your Card XX4417 was used for Rs 1,050.00 at RELIANCE SMART on 12/10/26 but the transaction failed. Your a/c has been debited. Charge slip not generated. Ref No 628544019012. -HDFC Bank",
+     "kind": "pos",
+     "amount": 1050.0,
+     "date": "2026-10-12",
+     "ref": "628544019012"
+    },
+    "pred": {
+     "kind": "pos",
+     "amount": 1050.0,
+     "date": "2026-10-12",
+     "ref": "628544019012",
+     "problems": []
+    },
+    "sec": 26.446176767349243
+   },
+   {
+    "id": 29,
+    "gold": {
+     "id": 29,
+     "sms": "Rs.450 credited to your a/c XX0042 on 19-10-26 by UPI from RAVI KUMAR Ref 629211904432 -Bank of Baroda",
+     "kind": "not_failed",
+     "amount": 450.0,
+     "date": "2026-10-19",
+     "ref": "629211904432"
+    },
+    "pred": {
+     "kind": "not_failed",
+     "amount": 450.0,
+     "date": "2026-10-19",
+     "ref": "629211904432",
+     "problems": []
+    },
+    "sec": 50.76803183555603
+   },
+   {
+    "id": 30,
+    "gold": {
+     "id": 30,
+     "sms": "Dear Customer, AePS cash withdrawal of Rs 3000 at CSP KIRAN STORES on 15-10-2026 failed but A/c XX1190 is debited. RRN 628813004417. -Bank of India",
+     "kind": "aeps",
+     "amount": 3000.0,
+     "date": "2026-10-15",
+     "ref": "628813004417"
+    },
+    "pred": {
+     "kind": "aeps",
+     "amount": 3000.0,
+     "date": "2026-10-15",
+     "ref": "628813004417",
+     "problems": []
+    },
+    "sec": 22.141643285751343
+   },
+   {
+    "id": 31,
+    "gold": {
+     "id": 31,
+     "sms": "A/c XX4521 bal Rs 3,412.50. Rs 899.00 debited on 21-10-26 for UPI to JIO PREPAID (Ref 629411208833). Recharge failed at merchant, amount will be auto-refunded. -SBI",
+     "kind": "upi_merchant",
+     "amount": 899.0,
+     "date": "2026-10-21",
+     "ref": "629411208833"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 899.0,
+     "date": "2026-10-21",
+     "ref": "629411208833",
+     "problems": []
+    },
+    "sec": 17.01243281364441
+   },
+   {
+    "id": 32,
+    "gold": {
+     "id": 32,
+     "sms": "Bhai ka UPI fail ho gaya: Rs.3000 kat gaye A/c XX7781 se 20/10/26 ko, Ref 629300441187, paisa Suresh ko nahi pahuncha. HDFC Bank",
+     "kind": "upi_transfer",
+     "amount": 3000.0,
+     "date": "2026-10-20",
+     "ref": "629300441187"
+    },
+    "pred": {
+     "kind": "upi_transfer",
+     "amount": 3000.0,
+     "date": "2026-10-20",
+     "ref": "629300441187",
+     "problems": []
+    },
+    "sec": 13.58150315284729
+   },
+   {
+    "id": 33,
+    "gold": {
+     "id": 33,
+     "sms": "Your UPI payment of Rs 640.00 to ZOMATO on 19-10-26 is successful. Earlier failed txn of Rs 640.00 (Ref 629210004455) will be reversed within 48 hrs. -ICICI",
+     "kind": "upi_merchant",
+     "amount": 640.0,
+     "date": "2026-10-19",
+     "ref": "629210004455"
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 640.0,
+     "date": "",
+     "ref": "629210004455",
+     "problems": []
+    },
+    "sec": 108.32409834861755
+   },
+   {
+    "id": 34,
+    "gold": {
+     "id": 34,
+     "sms": "PhonePe: Payment of \u20b91,499 to Airtel Postpaid on 18 Oct 2026 failed. \u20b91,499 debited from your bank account will be refunded in 3-5 days. Txn ID T2610181215440",
+     "kind": "upi_merchant",
+     "amount": 1499.0,
+     "date": "2026-10-18",
+     "ref": "T2610181215440"
+    },
+    "pred": {
+     "kind": "upi_merchant",
+     "amount": 1499.0,
+     "date": "2026-10-18",
+     "ref": "T2610181215440",
+     "problems": []
+    },
+    "sec": 20.830780744552612
+   },
+   {
+    "id": 35,
+    "gold": {
+     "id": 35,
+     "sms": "Dear Customer, your A/c XX1190 is credited with Rs 3,000.00 on 18-10-2026 towards reversal of failed AePS txn RRN 628813004417. -Bank of India",
+     "kind": "reversal",
+     "amount": 3000.0,
+     "date": "2026-10-18",
+     "ref": "628813004417"
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 3000.0,
+     "date": "2026-10-18",
+     "ref": "628813004417",
+     "problems": []
+    },
+    "sec": 29.522674322128296
+   },
+   {
+    "id": 36,
+    "gold": {
+     "id": 36,
+     "sms": "ATM se paise nahi nikle par Rs 10,000 debit ho gaye: A/c XX5531, 17/10/2026, ATM ID MH4471. Shikayat ke liye 1800-22-2244. -Bank of Maharashtra",
+     "kind": "atm",
+     "amount": 10000.0,
+     "date": "2026-10-17",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "atm",
+     "amount": 10000.0,
+     "date": "2026-10-17",
+     "ref": "MH4471",
+     "problems": []
+    },
+    "sec": 18.861579656600952
+   },
+   {
+    "id": 37,
+    "gold": {
+     "id": 37,
+     "sms": "IMPS of INR 25,000.00 from A/c XX2210 to A/c XX8890 (MANOJ K) on 21-10-2026 is under process. Ref 629411776612. If not credited, it will be reversed. Avl Bal INR 4,120.33 -Indian Bank",
+     "kind": "imps",
+     "amount": 25000.0,
+     "date": "2026-10-21",
+     "ref": "629411776612"
+    },
+    "pred": {
+     "kind": "imps",
+     "amount": 25000.0,
+     "date": "2026-10-21",
+     "ref": "629411776612",
+     "problems": []
+    },
+    "sec": 26.92021918296814
+   },
+   {
+    "id": 38,
+    "gold": {
+     "id": 38,
+     "sms": "Your Rs 2,200.00 refund for order 408-1234567 has been initiated and will reach your card in 5-7 days. -Amazon",
+     "kind": "not_failed",
+     "amount": 2200.0,
+     "date": "",
+     "ref": ""
+    },
+    "pred": {
+     "kind": "reversal",
+     "amount": 2200.0,
+     "date": "",
+     "ref": "408-1234567",
+     "problems": []
+    },
+    "sec": 27.195937395095825
+   },
+   {
+    "id": 39,
+    "gold": {
+     "id": 39,
+     "sms": "Txn of Rs.4,560.00 on Debit Card XX6612 at DMART THANE on 20-10-26 failed. Amount debited will be reversed. RRN 629308812201 -Axis Bank",
+     "kind": "pos",
+     "amount": 4560.0,
+     "date": "2026-10-20",
+     "ref": "629308812201"
+    },
+    "pred": {
+     "kind": "pos",
+     "amount": 4560.0,
+     "date": "2026-10-20",
+     "ref": "629308812201",
+     "problems": []
+    },
+    "sec": 15.169828176498413
+   },
+   {
+    "id": 40,
+    "gold": {
+     "id": 40,
+     "sms": "Rs 75 debited from Paytm Wallet on 21 Oct 2026 for payment to Sharma Dairy. Payment failed, \u20b975 will be credited back to your wallet. Order ID 20261021073311",
+     "kind": "wallet",
+     "amount": 75.0,
+     "date": "2026-10-21",
+     "ref": "20261021073311"
+    },
+    "pred": {
+     "kind": "wallet",
+     "amount": 75.0,
+     "date": "2026-10-21",
+     "ref": "20261021073311",
+     "problems": []
+    },
+    "sec": 15.529895544052124
+   }
+  ]
+ }
+}
